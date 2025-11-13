@@ -190,7 +190,7 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
                   </a>
                 ) : (
                   <button class="folder-button">
-                    <p class="folder-title">{node.displayName}</p>
+                    <p class="folder-title" style="text-transform: capitalize;">{node.displayName}</p>
                   </button>
                 )}
               </div>
