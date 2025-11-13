@@ -1,6 +1,9 @@
 ---
 title: Awards and Honors
 ---
+- **SMU Presidential Doctoral Fellowship 2024**
+  - The SMU Presidential Doctoral Fellowship is provided to exceptionally qualified students who are offered candidatures into SMU's PhD programmes. The Fellowship also recognises existing PhD students who are outstanding in their studies.
+
 
 - **NASA International Space Apps 2018**
   - World Finalist (top five teams worldwide) representing Sri Lanka
