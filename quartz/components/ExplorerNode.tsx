@@ -153,10 +153,6 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
     folderPath = `${pathOld}/${node.name}`
   }
 
-  if (node.file?.slug == "bcap") {
-    return null
-  }
-
   return (
     <li>
       {node.file ? (

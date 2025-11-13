@@ -1,3 +1,6 @@
+---
+title: Archived Projects
+---
 - **Travel time inference of MRT network**  _2020/21_  
   Developed a solution to statistically infer travel time within the MRT network using Automatic Fare Collection (AFC) data.
 
