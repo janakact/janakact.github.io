@@ -4,6 +4,9 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
   const title = cfg?.pageTitle ?? "Untitled Quartz"
   const baseDir = pathToRoot(fileData.slug!)
+  // fileData.slug == "index" ?
+  //: null
+
   return (
     <div>
       <image src="/static/photo.jpeg" width="80px" />
@@ -11,6 +14,7 @@ function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
         <a href={baseDir}>{title}</a>
       </h1>
     </div>
+
   )
 }
 
