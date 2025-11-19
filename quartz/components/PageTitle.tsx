@@ -10,9 +10,9 @@ function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
   return (
     <div>
       <image src="/static/photo.jpeg" width="80px" />
-      <h1 class={`page-title ${displayClass ?? ""}`}>
+      <h2 class={`page-title ${displayClass ?? ""}`}>
         <a href={baseDir}>{title}</a>
-      </h1>
+      </h2>
     </div>
 
   )

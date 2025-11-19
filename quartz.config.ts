@@ -14,8 +14,8 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     theme: {
       typography: {
-        header: "Computer Modern",
-        body: "Computer Modern",
+        header: "Helvetica Neue",  // Computer Modern - for latex like
+        body: "Helvetica Neue",
         code: "IBM Plex Mono",
       },
       colors: {
