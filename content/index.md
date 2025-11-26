@@ -2,7 +2,7 @@
 title: Home
 ---
 
-![Photo](/static/photo.jpeg)
+<!-- ![Photo|10px](/static/photo.png) -->
 
 I am a fourth-year PhD student in Computer Science, conducting research under the guidance of [Prof. Akshat Kumar](http://www.mysmu.edu/faculty/akshatkumar) at the [School of Computing and Information Systems, Singapore Management University (SMU)](https://scis.smu.edu.sg).
 

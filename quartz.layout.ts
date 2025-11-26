@@ -15,8 +15,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     // Component.ContentMeta(),
-    Component.TagList(),
-    // Component.Explorer(),
+    // Component.TagList(),
     // Component.Search(),
   ],
   left: [
@@ -27,6 +26,7 @@ export const defaultContentPageLayout: PageLayout = {
     // Component.Graph(),
     // Component.DesktopOnly(Component.TableOfContents()),
     // Component.Backlinks(),
+    Component.Explorer(),
   ],
 }
 
