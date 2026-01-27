@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import profileImage from './assets/me.jpg'
+import flowpgImage from "./assets/flowpg.png"
+import iostom from "./assets/iostom.png"
+import cvflow from "./assets/cvflow.png"
+import shipnavisim from "./assets/shipnavisim.png"
 
 const MainContainer = styled.table`
   width: 100%;
@@ -70,13 +74,13 @@ const PaperRow = styled.tr`
 
 const ImageCell = styled.td`
   padding: 16px;
-  width: 20%;
+  width: 25%;
   vertical-align: middle;
 `;
 
 const ContentCell = styled.td`
   padding: 8px;
-  width: 80%;
+  width: 75%;
   vertical-align: middle;
 `;
 
@@ -187,13 +191,13 @@ const Surangika = () => <Person href="https://www.massey.ac.nz/massey/expertise/
 const papersData = [
   {
     title: "IOSTOM: Offline Imitation Learning from Observations via State Transition Occupancy Matching",
-    authors: <><Tien /> <Anh />, <Janaka />, <Akshat /></>,
+    authors: <><Anh />, <Janaka />, <Tien />, <Akshat /></>,
     venue: "NeurIPS 2025",
-    // projectPage: "https://shipnavisim.github.io/",
     arxiv: false,
     openreview: "https://openreview.net/forum?id=OEp1J4V2fN",
     code: "https://github.com/quanganh1999/IOSTOM",
-    image: "",
+    paper: "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=11712&context=sis_research",
+    image: iostom,
     description: "",
   },
   {
@@ -204,7 +208,7 @@ const papersData = [
     arxiv: "https://arxiv.org/abs/2502.10431",
     openreview: false,
     code: "https://github.com/rlr-smu/cv-flow",
-    image: "",
+    image: cvflow,
     description: "",
     oral: true
   },
@@ -216,7 +220,7 @@ const papersData = [
     arxiv: false,
     openreview: false,
     code: "https://github.com/quanganh1999/ShipNaviSim",
-    image: "",
+    image: shipnavisim,
     description: "",
   },
   {
@@ -227,7 +231,7 @@ const papersData = [
     arxiv: "https://arxiv.org/abs/2402.05149",
     openreview: "https://openreview.net/forum?id=p1gzxzJ4Y5",
     code: "https://github.com/rlr-smu/flow-pg",
-    image: "images/flowpg.jpg",
+    image: flowpgImage,
     description: "",
   },
   {
