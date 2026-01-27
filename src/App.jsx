@@ -58,7 +58,7 @@ const ProfileImage = styled.img`
   border-radius: 50%;
 `;
 
-const SectionHeader = styled.h2`
+const SectionHeader = styled.b`
   padding: 16px;
   width: 100%;
   vertical-align: middle;
@@ -116,18 +116,32 @@ const PaperVideo = styled.video`
   display: block;
 `;
 
-const Venue = styled.em`
-
+const Highlight = styled.span`
+color: red
 `
+
+const Venue = styled.em`
+`
+// display: inline-block;
+// padding: 2px 10px;
+// font-size: 13px;
+// font-weight: 700;
+// border-radius: 6px;
+// color: #0c0101;
+// vertical-align: middle;
+// margin-right: 8px;
+// background-color: #e8b2b2;
 
 function Paper({ data }) {
   const links = [
-    data.venue && <Venue>{data.venue}</Venue>,
+    data.venue && <Venue className="conf-badge ai-badge">{data.venue}</Venue>,
+    data.oral && <Highlight>Oral Presentation</Highlight>,
     data.projectPage && <a key="pp" href={data.projectPage}>project page</a>,
     data.arxiv && <a key="arxiv" href={data.arxiv}>arXiv</a>,
     data.code && <a key="code" href={data.code}>code</a>,
     data.openreview && <a key="openreview" href={data.openreview}>OpenReview</a>,
-    data.video && <a key="video" href={data.video}>video</a>
+    data.paper && <a key="paper" href={data.paper}>paper</a>,
+    data.video && <a key="video" href={data.video}>video</a>,
   ].filter(Boolean);
 
   return (
@@ -138,7 +152,7 @@ function Paper({ data }) {
         </ImageContainer>
       </ImageCell>
       <ContentCell>
-        <PaperTitle href={data.projectPage || data.arxiv}>{data.title}</PaperTitle>
+        <PaperTitle href={data.projectPage || data.arxiv || data.paper}>{data.title}</PaperTitle>
         <br />
         {data.authors}
         <br />
@@ -155,15 +169,58 @@ function Paper({ data }) {
 }
 
 const Person = styled.a`
-
+font-size: 13px;
 `
-const Janaka = ({ link }) => link ? <Person href="https://janakact.github.io/">Janaka Chathuranga Brahmanage</Person> : <b>Janaka Chathuranga Brahmanage</b>
+const PersonNoLink = styled.b`
+font-size: 13px;
+`
+
+const Janaka = ({ link }) => link ? <Person href="https://janakact.github.io/">Janaka Chathuranga Brahmanage</Person> : <PersonNoLink>Janaka Chathuranga Brahmanage</PersonNoLink>
 const Akshat = () => <Person href="https://faculty.smu.edu.sg/profile/akshat-kumar-381">Akshat Kumar</Person>
 const Jiajing = () => <Person href="https://lingkaching.github.io/">LING Jiajing</Person>
+const Anh = () => <Person href="https://scholar.google.com/citations?user=2LMcTUgAAAAJ&hl=en">Anh Quan Pham</Person>
+const Thivya = () => <Person href="https://faculty.smu.edu.sg/profile/thivya-kandappu-461">Thivya Kandappu</Person>
+const Baihua = () => <Person href="https://faculty.smu.edu.sg/profile/baihua-zheng-341">Baihua Zheng</Person>
+const Tien = () => <Person href="https://faculty.smu.edu.sg/profile/mai-anh-tien-461">Tien Anh Mai</Person>
+const Surangika = () => <Person href="https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=319722">Surangika Ranathunga</Person>
 
 const papersData = [
   {
-    title: "Flowpg: action-constrained policy gradient with normalizing flows",
+    title: "IOSTOM: Offline Imitation Learning from Observations via State Transition Occupancy Matching",
+    authors: <><Tien /> <Anh />, <Janaka />, <Akshat /></>,
+    venue: "NeurIPS 2025",
+    // projectPage: "https://shipnavisim.github.io/",
+    arxiv: false,
+    openreview: "https://openreview.net/forum?id=OEp1J4V2fN",
+    code: "https://github.com/quanganh1999/IOSTOM",
+    image: "",
+    description: "",
+  },
+  {
+    title: "Leveraging Constraint Violation Signals For Action Constrained Reinforcement Learning",
+    authors: <><Janaka />, <Jiajing />, <Akshat /></>,
+    venue: "AAAI 2025",
+    projectPage: false,
+    arxiv: "https://arxiv.org/abs/2502.10431",
+    openreview: false,
+    code: "https://github.com/rlr-smu/cv-flow",
+    image: "",
+    description: "",
+    oral: true
+  },
+  {
+    title: "ShipNaviSim: Data-Driven Simulation for RealWorld Maritime Navigation",
+    authors: <><Anh />, <Janaka />, <Akshat /></>,
+    venue: "AAMAS 2025",
+    projectPage: "https://shipnavisim.github.io/",
+    arxiv: false,
+    openreview: false,
+    code: "https://github.com/quanganh1999/ShipNaviSim",
+    image: "",
+    description: "",
+  },
+  {
+    title: "FlowPG: Action-constrained Policy Gradient with Normalizing Flows",
     authors: <><Janaka />, <Jiajing />, <Akshat /></>,
     venue: "NeurIPS 2023",
     projectPage: false,
@@ -171,7 +228,55 @@ const papersData = [
     openreview: "https://openreview.net/forum?id=p1gzxzJ4Y5",
     code: "https://github.com/rlr-smu/flow-pg",
     image: "images/flowpg.jpg",
-    description: "Utilizes Normalizing Flows to map policy outputs directly to feasible action spaces, eliminating the need for slow optimization solvers.",
+    description: "",
+  },
+  {
+    title: "A data-driven approach for scheduling bus services subject to demand constraints",
+    authors: <><Janaka />, <Thivya />, <Baihua /></>,
+    venue: "IEEE TKDE 2022",
+    projectPage: false,
+    arxiv: false,
+    openreview: false,
+    code: false,
+    paper: "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=8900&context=sis_research",
+    image: "",
+    description: "",
+  },
+  {
+    title: "MetroWatch: A predictive system to estimate travel attributes using smart card data",
+    authors: <><Janaka />, <Thivya />, <Baihua /></>,
+    venue: "IEEE ICDE 2023",
+    projectPage: false,
+    arxiv: false,
+    openreview: false,
+    code: false,
+    paper: "https://ieeexplore.ieee.org/document/10184634",
+    image: "",
+    description: "",
+  },
+  {
+    title: "Annotating opinions and opinion targets in student course feedback",
+    authors: <><Janaka />, Sandareka Ediriweera, Rasantha Hasantha, Prabath Munasinghe, <Surangika /></>,
+    venue: "LREC 2018",
+    projectPage: false,
+    arxiv: false,
+    openreview: false,
+    code: false,
+    paper: "https://aclanthology.org/L18-1425.pdf",
+    image: "",
+    description: "",
+  },
+  {
+    title: "Opinion target extraction for student course feedback",
+    authors: <><Janaka />, Sandareka Ediriweera, Prabath Munasinghe, Rasantha Hasantha, <Surangika /></>,
+    venue: "ROCLING 2017",
+    projectPage: false,
+    arxiv: false,
+    openreview: false,
+    code: false,
+    paper: "https://aclanthology.org/O17-1028.pdf",
+    image: "",
+    description: "",
   }
 ];
 
@@ -209,7 +314,7 @@ function App() {
               <tbody>
                 <tr>
                   <td>
-                    <SectionHeader>Research</SectionHeader>
+                    For a complete list of publications, please visit my <a href="https://scholar.google.com/citations?user=E7r7hTUAAAAJ&hl=en">Google Scholar</a> page.
                   </td>
                 </tr>
               </tbody>
