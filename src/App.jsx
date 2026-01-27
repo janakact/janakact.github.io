@@ -121,6 +121,15 @@ const Venue = styled.em`
 `
 
 function Paper({ data }) {
+  const links = [
+    data.venue && <Venue>{data.venue}</Venue>,
+    data.projectPage && <a key="pp" href={data.projectPage}>project page</a>,
+    data.arxiv && <a key="arxiv" href={data.arxiv}>arXiv</a>,
+    data.code && <a key="code" href={data.code}>code</a>,
+    data.openreview && <a key="openreview" href={data.openreview}>OpenReview</a>,
+    data.video && <a key="video" href={data.video}>video</a>
+  ].filter(Boolean);
+
   return (
     <PaperRow>
       <ImageCell>
@@ -133,11 +142,12 @@ function Paper({ data }) {
         <br />
         {data.authors}
         <br />
-        <Venue>{data.venue}, </Venue>
-        {data.projectPage && <><a href={data.projectPage}>project page</a> / </>}
-        {data.arxiv && <a href={data.arxiv}>arXiv</a>}
-        {data.code && <a href={data.code}>code</a>}
-        {data.openreview && <a href={data.openreview}>OpenReview</a>}
+        {links.length > 0 && (
+          <>
+            {'  '}
+            {links.reduce((prev, curr) => [prev, ' | ', curr])}
+          </>
+        )}
         <p>{data.description}</p>
       </ContentCell>
     </PaperRow>
