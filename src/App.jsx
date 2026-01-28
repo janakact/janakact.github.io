@@ -39,6 +39,12 @@ const BioCell = styled.td`
   vertical-align: middle;
 `;
 
+const SectionCell = styled.td`
+  padding: 2.5%;
+  width: 100%;
+  vertical-align: middle;
+`;
+
 const NameText = styled.p`
   text-align: center;
   font-size: 32px;
@@ -63,8 +69,9 @@ const ProfileImage = styled.img`
 `;
 
 const SectionHeader = styled.h2`
-  padding: 16px;
   width: 100%;
+  padding-left: 16px;
+  padding-top: 16px;
   vertical-align: middle;
 `;
 
@@ -289,6 +296,98 @@ const papersData = [
   }
 ];
 
+const EducationData = [
+  {
+    school: "School of Computing and Information Systems, Singapore Management University",
+    period: "Aug 2022 - Present",
+    degree: "Doctor of Philosophy (PhD), Computer Science",
+    details: [
+      "Specialization: Reinforcement Learning",
+      <span key="sup">Supervisor: Prof. <Akshat /></span>
+    ]
+  },
+  {
+    school: "University of Moratuwa, Moratuwa, Sri Lanka",
+    period: "Jan 2014 - Jan 2018",
+    degree: "B.Sc. Eng (Hons.) in Computer Science & Engineering",
+    details: [
+      "First Class Honors; Cumulative GPA: 3.99/4.2"
+    ]
+  },
+  {
+    school: "Royal College Colombo, Sri Lanka",
+    period: "June 2004 - August 2012",
+    degree: "General Certificate of Education Advanced Level (Physical Science stream)",
+    details: [],
+    subItems: [
+      { title: "General Certificate of Education Ordinary Level", details: [] }
+    ]
+  }
+];
+
+const ExperienceData = [
+  {
+    company: "School of Computing and Information Systems, Singapore Management University",
+    location: "81 Victoria Street, Singapore",
+    role: "Research Engineer",
+    period: "Nov 2020 - July 2022",
+    description: "Develop algorithms for bus frequency optimization. Data-mining on transportation-system of Singapore."
+  },
+  {
+    company: "Stack Technologies (Pvt) Ltd, Colombo, Sri Lanka",
+    role: "Co-founder / Software Engineer",
+    period: "Oct 2019 - Nov 2021",
+    description: "Responsible for software design, development, and leading the development team."
+  },
+  {
+    company: "Hybriteq Solutions (Pvt) Ltd, Thalahena Malambe, Sri Lanka",
+    role: "Co-founder / Software Engineer",
+    period: "Aug 2018 - Oct 2019",
+    description: "Responsible for software design, development, and leading the development team."
+  },
+  {
+    company: "WSO2 Inc, Colombo, Sri Lanka",
+    role: "Engineering Intern",
+    period: "Aug-Dec 2016",
+    description: "Successfully completed a software engineering internship of six months."
+  }
+];
+
+const AwardsData = [
+  {
+    title: "SMU Presidential Doctoral Fellowship 2024",
+    description: "The SMU Presidential Doctoral Fellowship is provided to exceptionally qualified students who are offered candidatures into SMU's PhD programmes. The Fellowship also recognises existing PhD students who are outstanding in their studies."
+  },
+  {
+    title: "NASA International Space Apps 2018",
+    description: "World Finalist (top five teams worldwide) representing Sri Lanka. Among over 25,000 participants in 69 countries."
+  },
+  {
+    title: "Mora Ventures 2.0 (2017)",
+    description: "Winner. 'Smart Bat' ranked 1st out of 50 startups from the University of Moratuwa."
+  },
+  {
+    title: "Hack The North 2017, Canada",
+    description: "World Finalist from 72 countries."
+  },
+  {
+    title: "IEEEXtreme Programming Competition 9.0 (October 2015)",
+    description: "National Rank: 4. Global Rank: 93."
+  },
+  {
+    title: "Sri Lankan Astronomy and Astrophysics Olympiad Competition",
+    description: "Silver Medal"
+  },
+  {
+    title: "National School Software Competition",
+    description: "Merit Award"
+  },
+  {
+    title: "Robotics Competition, Open University Sri Lanka (2015)",
+    description: "2nd Place"
+  }
+];
+
 function App() {
   return (
     <MainContainer>
@@ -337,6 +436,7 @@ function App() {
               </tbody>
             </InnerContainer>
 
+            <SectionHeader>Research</SectionHeader>
             <InnerContainer>
               <tbody>
                 {papersData.map((paper, index) => (
@@ -344,6 +444,67 @@ function App() {
                 ))}
               </tbody>
             </InnerContainer>
+
+            <SectionHeader>Awards and Honors</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    <ul>
+                      {AwardsData.map((award, index) => (
+                        <li key={index} style={{ marginBottom: '10px' }}>
+                          <strong>{award.title}</strong>
+                          <div>{award.description}</div>
+                        </li>
+                      ))}
+                    </ul>
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
+            <SectionHeader>Education</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    {EducationData.map((edu, index) => (
+                      <div key={index} style={{ marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <strong>{edu.school}</strong>
+                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{edu.period}</span>
+                        </div>
+                        <div>{edu.degree}</div>
+                        {edu.details.map((detail, i) => (
+                          <div key={i} style={{ paddingLeft: '20px' }}>- {detail}</div>
+                        ))}
+                      </div>
+                    ))}
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
+            <SectionHeader>Experience</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    {ExperienceData.map((exp, index) => (
+                      <div key={index} style={{ marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <strong>{exp.company}</strong>
+                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{exp.period}</span>
+                        </div>
+                        <div><em>{exp.role}</em></div>
+                        <div>{exp.description}</div>
+                      </div>
+                    ))}
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
           </NoPaddingCell>
         </NoPaddingRow>
       </tbody>
