@@ -39,6 +39,7 @@ const BioCell = styled.td`
   vertical-align: middle;
 `;
 
+
 const SectionCell = styled.td`
   padding: 2.5%;
   width: 100%;
@@ -199,6 +200,7 @@ const Thivya = () => <Person href="https://faculty.smu.edu.sg/profile/thivya-kan
 const Baihua = () => <Person href="https://faculty.smu.edu.sg/profile/baihua-zheng-341">Baihua Zheng</Person>
 const Tien = () => <Person href="https://faculty.smu.edu.sg/profile/mai-anh-tien-461">Tien Anh Mai</Person>
 const Surangika = () => <Person href="https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=319722">Surangika Ranathunga</Person>
+const JackDongarra = () => <Person href="https://amturing.acm.org/award_winners/dongarra_3406337.cfm">Jack Dongarra</Person>
 
 const papersData = [
   {
@@ -335,13 +337,13 @@ const ExperienceData = [
   },
   {
     company: "Stack Technologies (Pvt) Ltd, Colombo, Sri Lanka",
-    role: "Co-founder / Software Engineer",
+    role: "Co-founder / Director / Software Engineer",
     period: "Oct 2019 - Nov 2021",
     description: "Responsible for software design, development, and leading the development team."
   },
   {
     company: "Hybriteq Solutions (Pvt) Ltd, Thalahena Malambe, Sri Lanka",
-    role: "Co-founder / Software Engineer",
+    role: "Co-founder / Director / Software Engineer",
     period: "Aug 2018 - Oct 2019",
     description: "Responsible for software design, development, and leading the development team."
   },
@@ -385,6 +387,20 @@ const AwardsData = [
   {
     title: "Robotics Competition, Open University Sri Lanka (2015)",
     description: "2nd Place"
+  }
+];
+
+const ServicesData = [
+  {
+    title: "Conference Reviewer",
+    content: "AAAI, NeurIPS, ICAPS, JAIR"
+  },
+  {
+    title: "Volunteer",
+    items: [
+      { text: <>Global Young Scientist Summit - 2026 (as a liaison officer to Prof. <JackDongarra />)</>, link: null },
+      { text: "IEEE CAI Conference", link: "https://www.computer.org/csdl/proceedings/cai/2024/1Z06iKF39vy" },
+    ]
   }
 ];
 
@@ -436,11 +452,97 @@ function App() {
                 </tr>
               </tbody>
             </InnerContainer>
+            <SectionHeader>Research</SectionHeader>
             <InnerContainer>
               <tbody>
                 {papersData.map((paper, index) => (
                   <Paper key={index} data={paper} />
                 ))}
+              </tbody>
+            </InnerContainer>
+
+            <SectionHeader>Education</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    {EducationData.map((edu, index) => (
+                      <div key={index} style={{ marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <strong>{edu.school}</strong>
+                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{edu.period}</span>
+                        </div>
+                        <div>{edu.degree}</div>
+                        {edu.details.map((detail, i) => (
+                          <div key={i} style={{ paddingLeft: '20px' }}>- {detail}</div>
+                        ))}
+                      </div>
+                    ))}
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
+            <SectionHeader>Experience</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    {ExperienceData.map((exp, index) => (
+                      <div key={index} style={{ marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <strong>{exp.company}</strong>
+                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{exp.period}</span>
+                        </div>
+                        <div><em>{exp.role}</em></div>
+                        <div>{exp.description}</div>
+                      </div>
+                    ))}
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
+            <SectionHeader>Awards and Honors</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    <ul>
+                      {AwardsData.map((award, index) => (
+                        <li key={index} style={{ marginBottom: '10px' }}>
+                          <strong>{award.title}</strong>
+                          <div>{award.description}</div>
+                        </li>
+                      ))}
+                    </ul>
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
+            <SectionHeader>Services</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    {ServicesData.map((service, index) => (
+                      <div key={index} style={{ marginBottom: '20px' }}>
+                        <strong>{service.title}</strong>
+                        {service.content && <span>: {service.content}</span>}
+                        {service.items && (
+                          <ul style={{ marginTop: '5px' }}>
+                            {service.items.map((item, i) => (
+                              <li key={i}>
+                                {item.link ? <a href={item.link}>{item.text}</a> : item.text}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </SectionCell>
+                </tr>
               </tbody>
             </InnerContainer>
 
