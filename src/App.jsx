@@ -62,15 +62,21 @@ const ProfileImage = styled.img`
   border-radius: 50%;
 `;
 
-const SectionHeader = styled.b`
+const SectionHeader = styled.h2`
   padding: 16px;
   width: 100%;
   vertical-align: middle;
 `;
 
-const PaperRow = styled.tr`
-  background-color: ${props => props.highlight ? '#ffffd0' : 'transparent'};
+const BioParagraph = styled.p`
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 10px;
 `;
+
+const PaperRow = styled.tr`
+`
+
 
 const ImageCell = styled.td`
   padding: 16px;
@@ -158,7 +164,7 @@ function Paper({ data }) {
       <ContentCell>
         <PaperTitle href={data.projectPage || data.arxiv || data.paper}>{data.title}</PaperTitle>
         <br />
-        {data.authors}
+        <small>{data.authors}</small>
         <br />
         {links.length > 0 && (
           <>
@@ -173,10 +179,9 @@ function Paper({ data }) {
 }
 
 const Person = styled.a`
-font-size: 13px;
 `
 const PersonNoLink = styled.b`
-font-size: 13px;
+font-size: 14px;
 `
 
 const Janaka = ({ link }) => link ? <Person href="https://janakact.github.io/">Janaka Chathuranga Brahmanage</Person> : <PersonNoLink>Janaka Chathuranga Brahmanage</PersonNoLink>
@@ -235,18 +240,6 @@ const papersData = [
     description: "",
   },
   {
-    title: "A data-driven approach for scheduling bus services subject to demand constraints",
-    authors: <><Janaka />, <Thivya />, <Baihua /></>,
-    venue: "IEEE TKDE 2022",
-    projectPage: false,
-    arxiv: false,
-    openreview: false,
-    code: false,
-    paper: "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=8900&context=sis_research",
-    image: "",
-    description: "",
-  },
-  {
     title: "MetroWatch: A predictive system to estimate travel attributes using smart card data",
     authors: <><Janaka />, <Thivya />, <Baihua /></>,
     venue: "IEEE ICDE 2023",
@@ -255,6 +248,18 @@ const papersData = [
     openreview: false,
     code: false,
     paper: "https://ieeexplore.ieee.org/document/10184634",
+    image: "",
+    description: "",
+  },
+  {
+    title: "A data-driven approach for scheduling bus services subject to demand constraints",
+    authors: <><Janaka />, <Thivya />, <Baihua /></>,
+    venue: "IEEE TKDE 2022",
+    projectPage: false,
+    arxiv: false,
+    openreview: false,
+    code: false,
+    paper: "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=8900&context=sis_research",
     image: "",
     description: "",
   },
@@ -295,7 +300,15 @@ function App() {
                 <NoPaddingRow>
                   <BioCell>
                     <NameText className="name">Janaka Brahmanage</NameText>
-                    <p>Bio:</p>
+                    <BioParagraph>
+                      I am a fourth-year PhD student in Computer Science at the <a href="https://scis.smu.edu.sg">School of Computing and Information Systems, Singapore Management University (SMU)</a>,
+                      advised by Prof. <Akshat />. My research primarily focuses on Reinforcement Learning (RL), with a specific interest in Safe-RL, Imitation Learning,
+                      and Constraint Satisfaction. I am a recipient of the <a href="https://graduatestudies.smu.edu.sg/phd/presidential-doctoral-fellowship">SMU Presidential Doctoral Fellowship (2024)</a>.
+                    </BioParagraph>
+                    <BioParagraph>
+                      Prior to my PhD, I worked as a Research Engineer at SMU and co-founded two tech <a href="https://www.stacktech.io/Solutions/tripmo">startups</a> in Sri Lanka.
+                      I graduated with First Class Honors from the University of Moratuwa, holding a B.Sc. in Computer Science & Engineering.
+                    </BioParagraph>
                     <LinksText>
                       <a href="mailto:janakactsl@gmail.com">Email</a> &nbsp;/&nbsp;
                       <a href="data/Janaka-Brahmanage-cv.pdf">CV</a> &nbsp;/&nbsp;
@@ -317,9 +330,9 @@ function App() {
             <InnerContainer>
               <tbody>
                 <tr>
-                  <td>
+                  <BioCell>
                     For a complete list of publications, please visit my <a href="https://scholar.google.com/citations?user=E7r7hTUAAAAJ&hl=en">Google Scholar</a> page.
-                  </td>
+                  </BioCell>
                 </tr>
               </tbody>
             </InnerContainer>
