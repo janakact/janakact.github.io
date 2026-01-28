@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import React from "react"
 import styled from 'styled-components'
 import profileImage from './assets/me.jpg'
 import flowpgImage from "./assets/flowpg.png"
@@ -177,7 +178,12 @@ function Paper({ data }) {
         {links.length > 0 && (
           <>
             {'  '}
-            {links.reduce((prev, curr) => [prev, ' | ', curr])}
+            {links.map((link, i) => (
+              <React.Fragment key={i}>
+                {link}
+                {i < links.length - 1 && ' | '}
+              </React.Fragment>
+            ))}
           </>
         )}
         <p>{data.description}</p>
@@ -357,7 +363,7 @@ const ExperienceData = [
 
 const AwardsData = [
   {
-    title: "SMU Presidential Doctoral Fellowship 2024",
+    title: "SMU Presidential Doctoral Fellowship 2024 and 2025",
     description: "The SMU Presidential Doctoral Fellowship is provided to exceptionally qualified students who are offered candidatures into SMU's PhD programmes. The Fellowship also recognises existing PhD students who are outstanding in their studies."
   },
   {
@@ -392,14 +398,14 @@ const AwardsData = [
 
 const ServicesData = [
   {
-    title: "Conference Reviewer",
+    title: "Conference/Journal Reviewer",
     content: "AAAI, NeurIPS, ICAPS, JAIR"
   },
   {
     title: "Volunteer",
     items: [
-      { text: <>Global Young Scientist Summit - 2026 (as a liaison officer to Prof. <JackDongarra />)</>, link: null },
-      { text: "IEEE CAI Conference", link: "https://www.computer.org/csdl/proceedings/cai/2024/1Z06iKF39vy" },
+      { text: <>Global Young Scientist Summit (GYSS) - 2026 (as a liaison officer to Prof. <JackDongarra />)</>, link: null },
+      { text: <><a href="https://www.computer.org/csdl/proceedings/cai/2024/1Z06iKF39vy">IEEE CAI Conference - 2024</a></> },
     ]
   }
 ];
@@ -418,7 +424,7 @@ function App() {
                     <BioParagraph>
                       I am a fourth-year PhD student in Computer Science at the <a href="https://scis.smu.edu.sg">School of Computing and Information Systems, Singapore Management University (SMU)</a>,
                       advised by Prof. <Akshat />. My research primarily focuses on Reinforcement Learning (RL), with a specific interest in Safe-RL, Imitation Learning,
-                      and Constraint Satisfaction. I am a recipient of the <a href="https://graduatestudies.smu.edu.sg/phd/presidential-doctoral-fellowship">SMU Presidential Doctoral Fellowship (2024)</a>.
+                      and Constraint Satisfaction. I am a recipient of the <a href="https://graduatestudies.smu.edu.sg/phd/presidential-doctoral-fellowship">SMU Presidential Doctoral Fellowship (2024 and 2025)</a>.
                     </BioParagraph>
                     <BioParagraph>
                       Prior to my PhD, I worked as a Research Engineer at SMU and co-founded two tech <a href="https://www.stacktech.io/Solutions/tripmo">startups</a> in Sri Lanka.
@@ -458,48 +464,6 @@ function App() {
                 {papersData.map((paper, index) => (
                   <Paper key={index} data={paper} />
                 ))}
-              </tbody>
-            </InnerContainer>
-
-            <SectionHeader>Education</SectionHeader>
-            <InnerContainer>
-              <tbody>
-                <tr>
-                  <SectionCell>
-                    {EducationData.map((edu, index) => (
-                      <div key={index} style={{ marginBottom: '20px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <strong>{edu.school}</strong>
-                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{edu.period}</span>
-                        </div>
-                        <div>{edu.degree}</div>
-                        {edu.details.map((detail, i) => (
-                          <div key={i} style={{ paddingLeft: '20px' }}>- {detail}</div>
-                        ))}
-                      </div>
-                    ))}
-                  </SectionCell>
-                </tr>
-              </tbody>
-            </InnerContainer>
-
-            <SectionHeader>Experience</SectionHeader>
-            <InnerContainer>
-              <tbody>
-                <tr>
-                  <SectionCell>
-                    {ExperienceData.map((exp, index) => (
-                      <div key={index} style={{ marginBottom: '20px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <strong>{exp.company}</strong>
-                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{exp.period}</span>
-                        </div>
-                        <div><em>{exp.role}</em></div>
-                        <div>{exp.description}</div>
-                      </div>
-                    ))}
-                  </SectionCell>
-                </tr>
               </tbody>
             </InnerContainer>
 
@@ -546,19 +510,22 @@ function App() {
               </tbody>
             </InnerContainer>
 
-            <SectionHeader>Awards and Honors</SectionHeader>
+
+            <SectionHeader>Experience</SectionHeader>
             <InnerContainer>
               <tbody>
                 <tr>
                   <SectionCell>
-                    <ul>
-                      {AwardsData.map((award, index) => (
-                        <li key={index} style={{ marginBottom: '10px' }}>
-                          <strong>{award.title}</strong>
-                          <div>{award.description}</div>
-                        </li>
-                      ))}
-                    </ul>
+                    {ExperienceData.map((exp, index) => (
+                      <div key={index} style={{ marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <strong>{exp.company}</strong>
+                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{exp.period}</span>
+                        </div>
+                        <div><em>{exp.role}</em></div>
+                        <div>{exp.description}</div>
+                      </div>
+                    ))}
                   </SectionCell>
                 </tr>
               </tbody>
@@ -579,26 +546,6 @@ function App() {
                         {edu.details.map((detail, i) => (
                           <div key={i} style={{ paddingLeft: '20px' }}>- {detail}</div>
                         ))}
-                      </div>
-                    ))}
-                  </SectionCell>
-                </tr>
-              </tbody>
-            </InnerContainer>
-
-            <SectionHeader>Experience</SectionHeader>
-            <InnerContainer>
-              <tbody>
-                <tr>
-                  <SectionCell>
-                    {ExperienceData.map((exp, index) => (
-                      <div key={index} style={{ marginBottom: '20px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <strong>{exp.company}</strong>
-                          <span style={{ minWidth: '150px', textAlign: 'right' }}>{exp.period}</span>
-                        </div>
-                        <div><em>{exp.role}</em></div>
-                        <div>{exp.description}</div>
                       </div>
                     ))}
                   </SectionCell>
