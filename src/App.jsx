@@ -206,7 +206,7 @@ const Thivya = () => <Person href="https://faculty.smu.edu.sg/profile/thivya-kan
 const Baihua = () => <Person href="https://faculty.smu.edu.sg/profile/baihua-zheng-341">Baihua Zheng</Person>
 const Tien = () => <Person href="https://faculty.smu.edu.sg/profile/mai-anh-tien-461">Tien Anh Mai</Person>
 const Surangika = () => <Person href="https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=319722">Surangika Ranathunga</Person>
-const JackDongarra = () => <Person href="https://amturing.acm.org/award_winners/dongarra_3406337.cfm">Jack Dongarra</Person>
+const JackDongarra = () => <Person href="https://en.wikipedia.org/wiki/Jack_Dongarra">Jack Dongarra</Person>
 
 const papersData = [
   {
@@ -458,7 +458,6 @@ function App() {
                 </tr>
               </tbody>
             </InnerContainer>
-            <SectionHeader>Research</SectionHeader>
             <InnerContainer>
               <tbody>
                 {papersData.map((paper, index) => (
