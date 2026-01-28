@@ -426,6 +426,7 @@ function App() {
               </tbody>
             </InnerContainer>
 
+            <SectionHeader>Research</SectionHeader>
             <InnerContainer>
               <tbody>
                 <tr>
@@ -435,8 +436,6 @@ function App() {
                 </tr>
               </tbody>
             </InnerContainer>
-
-            <SectionHeader>Research</SectionHeader>
             <InnerContainer>
               <tbody>
                 {papersData.map((paper, index) => (
