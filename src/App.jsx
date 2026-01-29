@@ -9,9 +9,11 @@ import React from "react"
 import styled from 'styled-components'
 import profileImage from './assets/me.jpg'
 import flowpgImage from "./assets/flowpg.png"
-import iostom from "./assets/iostom.png"
+import iostom from "./assets/iostom.gif"
+import bus from "./assets/bus-schedule.png"
 import cvflow from "./assets/cvflow.png"
 import shipnavisim from "./assets/shipnavisim.png"
+import metroWatch from "./assets/metro-watch.gif"
 
 const MainContainer = styled.table`
   width: 100%;
@@ -262,21 +264,23 @@ const papersData = [
     code: "https://github.com/rlr-smu/flow-pg",
     image: flowpgImage,
     description: "",
+    video: "https://neurips.cc/virtual/2023/poster/70434"
   },
   {
     title: "MetroWatch: A predictive system to estimate travel attributes using smart card data",
     authors: <><Janaka />, <Thivya />, <Baihua /></>,
-    venue: "IEEE ICDE 2023",
+    venue: "IEEE ICDE 2023 (Demo)",
     projectPage: false,
     arxiv: false,
     openreview: false,
+    video: "https://youtu.be/PD6Xyg-zwEo",
     code: false,
     paper: "https://ieeexplore.ieee.org/document/10184634",
-    image: "",
+    image: metroWatch,
     description: "",
   },
   {
-    title: "A data-driven approach for scheduling bus services subject to demand constraints",
+    title: "A Data-Driven Approach for Scheduling Bus Services Subject to Demand Constraints",
     authors: <><Janaka />, <Thivya />, <Baihua /></>,
     venue: "IEEE TKDE 2022",
     projectPage: false,
@@ -284,7 +288,7 @@ const papersData = [
     openreview: false,
     code: false,
     paper: "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=8900&context=sis_research",
-    image: "",
+    image: bus,
     description: "",
   },
   {
@@ -468,10 +472,11 @@ function App() {
                     </BioParagraph>
                     <LinksText>
                       <a href="mailto:janakactsl@gmail.com">Email</a> &nbsp;/&nbsp;
-                      <a href="data/Janaka-Brahmanage-cv.pdf">CV</a> &nbsp;/&nbsp;
-                      <a href="data/Janaka-Brahmanage-bio.txt">Bio</a> &nbsp;/&nbsp;
+                      <a href="/CV-Janaka-Brahmanage.pdf" target="_blank" rel="noopener noreferrer">CV</a> &nbsp;/&nbsp;
+                      <a href="/bio.txt" target="_blank" rel="noopener noreferrer">Bio</a> &nbsp;/&nbsp;
                       <a href="https://scholar.google.com/citations?user=E7r7hTUAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
                       <a href="https://twitter.com/janakact">Twitter</a> &nbsp;/&nbsp;
+                      <a href="https://janakachathuranga.medium.com/">Blog</a> &nbsp;/&nbsp;
                       <a href="https://github.com/janakact/">Github</a>
                     </LinksText>
                   </BioCell>
@@ -496,7 +501,7 @@ function App() {
             </InnerContainer>
             <InnerContainer>
               <tbody>
-                {papersData.map((paper, index) => (
+                {papersData.filter(paper => paper.image).map((paper, index) => (
                   <Paper key={index} data={paper} />
                 ))}
               </tbody>
@@ -604,7 +609,17 @@ function App() {
                 </tr>
               </tbody>
             </InnerContainer>
-
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    <p style={{ textAlign: "right", fontSize: "small" }}>
+                      Template adapted from <a href="https://jonbarron.info" target="_blank">1</a> and <a href="https://vindulamj.github.io/">2</a>.
+                    </p>
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
           </NoPaddingCell>
         </NoPaddingRow>
       </tbody>
