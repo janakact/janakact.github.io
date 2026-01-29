@@ -614,7 +614,8 @@ function App() {
                 <tr>
                   <SectionCell>
                     <p style={{ textAlign: "right", fontSize: "small" }}>
-                      Template adapted from <a href="https://jonbarron.info" target="_blank">1</a> and <a href="https://vindulamj.github.io/">2</a>.
+                      Feel free to fork this website's <a href="https://github.com/janakact/janakact.github.io" target="_blank" rel="noreferrer">source code</a>.
+                      Template adapted from <a href="https://jonbarron.info" target="_blank" rel="noreferrer">0</a> and <a href="https://vindulamj.github.io/" target="_blank" rel="noreferrer">1</a>.
                     </p>
                   </SectionCell>
                 </tr>
