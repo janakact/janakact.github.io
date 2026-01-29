@@ -1,4 +1,10 @@
 import { useState } from 'react'
+// TODO 
+// - Add Open source contribs, ReactNativeFloating BUbble - <BS>https://github.com/hybriteq/react-native-floating-bubble
+// - Maritime Simulator
+// - https://github.com/Open-SL/sinhala-unicode-converter <td class="contribution_name">
+//
+//
 import React from "react"
 import styled from 'styled-components'
 import profileImage from './assets/me.jpg'
@@ -42,7 +48,10 @@ const BioCell = styled.td`
 
 
 const SectionCell = styled.td`
-  padding: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-bottom: 2.5%;
+  padding-top: 0.5%;
   width: 100%;
   vertical-align: middle;
 `;
@@ -73,7 +82,7 @@ const ProfileImage = styled.img`
 const SectionHeader = styled.h2`
   width: 100%;
   padding-left: 16px;
-  padding-top: 16px;
+  padding-top: 8px;
   vertical-align: middle;
 `;
 
@@ -396,6 +405,28 @@ const AwardsData = [
   }
 ];
 
+const StartForks = ({ stars, forks }) => <>
+  {stars} <i className="fa fa-star" aria-hidden="true" style={{ color: "rgb(233, 190, 18)" }}></i> stars, {forks} <i className="fa fa-code-fork" aria-hidden="true" style={{ color: "rgb(115, 110, 89)" }}> </i> forks
+</>
+
+const OpenSourceData = [
+  {
+    title: <>React Native Floating Bubble</>,
+    link: "https://github.com/hybriteq/react-native-floating-bubble",
+    description: <>A simple floating bubble for React Native (<StartForks stars={218} forks={62} />) - Main contributor</>
+  },
+  {
+    title: "Sinhala Unicode Converter",
+    link: "https://github.com/Open-SL/sinhala-unicode-converter",
+    description: <>A tool to convert Singlish to Sinhala Unicode (<StartForks stars={19} forks={3} />) - Main contributor</>
+  },
+  {
+    title: "Maritime Simulator",
+    link: "https://github.com/quanganh1999/ShipNaviSim",
+    description: "Data-Driven Simulation for RealWorld Maritime Navigation - Co-contributor"
+  },
+];
+
 const ServicesData = [
   {
     title: "Conference/Journal Reviewer",
@@ -452,9 +483,9 @@ function App() {
             <InnerContainer>
               <tbody>
                 <tr>
-                  <BioCell>
+                  <SectionCell>
                     For a complete list of publications, please visit my <a href="https://scholar.google.com/citations?user=E7r7hTUAAAAJ&hl=en">Google Scholar</a> page.
-                  </BioCell>
+                  </SectionCell>
                 </tr>
               </tbody>
             </InnerContainer>
@@ -466,19 +497,36 @@ function App() {
               </tbody>
             </InnerContainer>
 
+            <SectionHeader>Open Source Contributions</SectionHeader>
+            <InnerContainer>
+              <tbody>
+                <tr>
+                  <SectionCell>
+                    <div>
+                      {OpenSourceData.map((item, index) => (
+                        <div key={index}>
+                          <a href={item.link}>{item.title}</a> - {item.description}
+                        </div>
+                      ))}
+                    </div>
+                  </SectionCell>
+                </tr>
+              </tbody>
+            </InnerContainer>
+
             <SectionHeader>Awards and Honors</SectionHeader>
             <InnerContainer>
               <tbody>
                 <tr>
                   <SectionCell>
-                    <ul>
+                    <div>
                       {AwardsData.map((award, index) => (
-                        <li key={index} style={{ marginBottom: '10px' }}>
-                          <strong>{award.title}</strong>
-                          <div>{award.description}</div>
-                        </li>
+                        <div key={index} style={{ marginBottom: '10px' }}>
+                          <strong>{award.title}: </strong>
+                          <span>{award.description}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </SectionCell>
                 </tr>
               </tbody>
