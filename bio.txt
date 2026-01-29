@@ -1,0 +1,3 @@
+I am a fourth-year PhD student in Computer Science at the School of Computing and Information Systems, Singapore Management University (SMU), advised by Prof. Akshat Kumar. My research primarily focuses on Reinforcement Learning (RL), with a specific interest in Safe-RL, Imitation Learning, and Constraint Satisfaction. I am a recipient of the SMU Presidential Doctoral Fellowship (2024 and 2025).
+
+Prior to my PhD, I worked as a Research Engineer at SMU and co-founded two tech startups in Sri Lanka. I graduated with First Class Honors from the University of Moratuwa, holding a B.Sc. in Computer Science & Engineering.
