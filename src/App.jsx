@@ -48,7 +48,7 @@ const BioCell = styled.td`
 
 
 const SectionCell = styled.td`
-  padding-left: 2.5%;
+  padding-left: 16px;
   padding-right: 2.5%;
   padding-bottom: 2.5%;
   padding-top: 0.5%;
@@ -372,11 +372,11 @@ const ExperienceData = [
 
 const AwardsData = [
   {
-    title: "SMU Presidential Doctoral Fellowship 2024 and 2025",
+    title: "SMU Presidential Doctoral Fellowship (2024 and 2025)",
     description: "The SMU Presidential Doctoral Fellowship is provided to exceptionally qualified students who are offered candidatures into SMU's PhD programmes. The Fellowship also recognises existing PhD students who are outstanding in their studies."
   },
   {
-    title: "NASA International Space Apps 2018",
+    title: "NASA International Space Apps (2018)",
     description: "World Finalist (top five teams worldwide) representing Sri Lanka. Among over 25,000 participants in 69 countries."
   },
   {
@@ -384,11 +384,15 @@ const AwardsData = [
     description: "Winner. 'Smart Bat' ranked 1st out of 50 startups from the University of Moratuwa."
   },
   {
-    title: "Hack The North 2017, Canada",
+    title: <>Google Summer of Code (GSoC) Contributor for Apache Software Foundation (2016)</>,
+    description: <>Project: Apache Tajo. Implemented the MongoDB storage module for Apache Tajo (<a href="https://janakachathuranga.medium.com/gsoc-2016-add-mongodb-to-tajo-storage-925de06be769">details</a>).</>
+  },
+  {
+    title: "Hack The North (2017), Canada",
     description: "World Finalist from 72 countries."
   },
   {
-    title: "IEEEXtreme Programming Competition 9.0 (October 2015)",
+    title: "IEEEXtreme Programming Competition 9.0 (2015)",
     description: "National Rank: 4. Global Rank: 93."
   },
   {
@@ -435,8 +439,9 @@ const ServicesData = [
   {
     title: "Volunteer",
     items: [
-      { text: <>Global Young Scientist Summit (GYSS) - 2026 (as a liaison officer to Prof. <JackDongarra />)</>, link: null },
-      { text: <><a href="https://www.computer.org/csdl/proceedings/cai/2024/1Z06iKF39vy">IEEE CAI Conference - 2024</a></> },
+      { text: <>Global Young Scientist Summit (GYSS) - 2026 - Liaison officer (to Prof. <JackDongarra />)</>, link: null },
+      { text: <><a href="https://graduatestudies.smu.edu.sg/singapore-rising-scholars-conference-0">Singapore Rising Scholars Conference - 2025</a> - Moderator</> },
+      { text: <><a href="https://www.computer.org/csdl/proceedings/cai/2024/1Z06iKF39vy">IEEE CAI Conference - 2024</a> - Volunteer</> },
     ]
   }
 ];
@@ -538,9 +543,9 @@ function App() {
                 <tr>
                   <SectionCell>
                     {ServicesData.map((service, index) => (
-                      <div key={index} style={{ marginBottom: '20px' }}>
-                        <strong>{service.title}</strong>
-                        {service.content && <span>: {service.content}</span>}
+                      <div key={index}>
+                        <strong>{service.title}: </strong>
+                        {service.content && <span> {service.content}</span>}
                         {service.items && (
                           <ul style={{ marginTop: '5px' }}>
                             {service.items.map((item, i) => (
