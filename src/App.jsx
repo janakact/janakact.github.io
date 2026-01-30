@@ -43,7 +43,7 @@ const InnerContainer = styled.table`
 `;
 
 const BioCell = styled.td`
-  padding: 2.5%;
+  padding: 16px;
   padding-top: 0;
   width: 100%;
   text-align: center;
