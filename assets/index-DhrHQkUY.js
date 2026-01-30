@@ -27,7 +27,7 @@ Error generating stack: `+a.message+`
   margin-right: auto;
   margin-left: auto;
 `,n0=Ct.td`
-  padding: 2.5%;
+  padding: 16px;
   padding-top: 0;
   width: 100%;
   text-align: center;
