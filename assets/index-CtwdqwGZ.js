@@ -62,14 +62,31 @@ Error generating stack: `+a.message+`
   line-height: 1.5;
   margin-bottom: 10px;
 `,D1=Ct.tr`
+  @media (max-width: 640px) {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `,C1=Ct.td`
   padding: 16px;
   width: 25%;
   vertical-align: middle;
+  @media (max-width: 640px) {
+    width: 100%;
+    display: block;
+    padding-bottom: 0;
+  }
 `,U1=Ct.td`
   padding: 8px;
   width: 75%;
   vertical-align: middle;
+  @media (max-width: 640px) {
+    width: 100%;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `,N1=Ct.a`
   font-weight: bold;
 `,R1=Ct.div`
