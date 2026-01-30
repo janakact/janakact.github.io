@@ -463,7 +463,7 @@ const ServicesData = [
   {
     title: "Volunteer",
     items: [
-      { text: <>Global Young Scientist Summit (GYSS) - 2026 - Liaison officer (to Prof. <JackDongarra />)</>, link: null },
+      { text: <><a href="https://gyss.nrf.gov.sg/">Global Young Scientist Summit (GYSS) - 2026</a> - Liaison officer (to Prof. <JackDongarra />)</>, link: null },
       { text: <><a href="https://graduatestudies.smu.edu.sg/singapore-rising-scholars-conference-0">Singapore Rising Scholars Conference - 2025</a> - Moderator</> },
       { text: <><a href="https://www.computer.org/csdl/proceedings/cai/2024/1Z06iKF39vy">IEEE CAI Conference - 2024</a> - Volunteer</> },
     ]
