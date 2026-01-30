@@ -44,7 +44,9 @@ const InnerContainer = styled.table`
 
 const BioCell = styled.td`
   padding: 2.5%;
-  width: 63%;
+  padding-top: 0;
+  width: 100%;
+  text-align: center;
   vertical-align: middle;
 `;
 
@@ -69,8 +71,9 @@ const LinksText = styled.p`
 `;
 
 const PhotoCell = styled.td`
-  padding: 2.5%;
-  width: 37%;
+  padding-top: 0.5%;
+  padding-right: 10.5%;
+  width: 30%;
   max-width: 37%;
 `;
 
@@ -476,8 +479,23 @@ function App() {
             <InnerContainer>
               <tbody>
                 <NoPaddingRow>
-                  <BioCell>
+                  <BioCell style={{ width: '67%' }}>
                     <NameText className="name">Janaka Brahmanage</NameText>
+                    <div>janakat.2022@phdcs.smu.edu.sg</div>
+                  </BioCell>
+                  <PhotoCell>
+                    <a href={profileImage}>
+                      <ProfileImage alt="profile photo" src={profileImage} className="hoverZoomLink" />
+                    </a>
+                  </PhotoCell>
+                </NoPaddingRow>
+              </tbody>
+            </InnerContainer>
+
+            <InnerContainer>
+              <tbody>
+                <NoPaddingRow>
+                  <BioCell>
                     <BioParagraph>
                       I am a fourth-year PhD student in Computer Science at the <a href="https://scis.smu.edu.sg">School of Computing and Information Systems, Singapore Management University (SMU)</a>,
                       advised by Prof. <Akshat />. My research primarily focuses on Reinforcement Learning (RL), with a specific interest in Safe-RL, Imitation Learning,
@@ -497,11 +515,6 @@ function App() {
                       <a href="https://github.com/janakact/">Github</a>
                     </LinksText>
                   </BioCell>
-                  <PhotoCell>
-                    <a href={profileImage}>
-                      <ProfileImage alt="profile photo" src={profileImage} className="hoverZoomLink" />
-                    </a>
-                  </PhotoCell>
                 </NoPaddingRow>
               </tbody>
             </InnerContainer>
