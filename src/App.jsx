@@ -95,6 +95,12 @@ const BioParagraph = styled.p`
 `;
 
 const PaperRow = styled.tr`
+  @media (max-width: 640px) {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 
@@ -102,12 +108,23 @@ const ImageCell = styled.td`
   padding: 16px;
   width: 25%;
   vertical-align: middle;
+  @media (max-width: 640px) {
+    width: 100%;
+    display: block;
+    padding-bottom: 0;
+  }
 `;
 
 const ContentCell = styled.td`
   padding: 8px;
   width: 75%;
   vertical-align: middle;
+  @media (max-width: 640px) {
+    width: 100%;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const PaperTitle = styled.a`
@@ -613,7 +630,7 @@ function App() {
               <tbody>
                 <tr>
                   <SectionCell>
-                    <p style={{ textAlign: "right", fontSize: "small" }}>
+                    <p style={{ textAlign: "justify", fontSize: "small" }}>
                       Feel free to fork this website's <a href="https://github.com/janakact/janakact.github.io" target="_blank" rel="noreferrer">source code</a>.
                       Template adapted from <a href="https://jonbarron.info" target="_blank" rel="noreferrer">0</a> and <a href="https://vindulamj.github.io/" target="_blank" rel="noreferrer">1</a>.
                     </p>
