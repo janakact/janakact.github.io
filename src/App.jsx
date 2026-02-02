@@ -502,7 +502,7 @@ function App() {
                       and Constraint Satisfaction. I am a recipient of the <a href="https://graduatestudies.smu.edu.sg/phd/presidential-doctoral-fellowship">SMU Presidential Doctoral Fellowship (2024 and 2025)</a>.
                     </BioParagraph>
                     <BioParagraph>
-                      Prior to my PhD, I worked as a Research Engineer at SMU and co-founded two tech <a href="https://www.stacktech.io/Solutions/tripmo">startups</a> in Sri Lanka.
+                      Prior to my PhD, I worked as a Research Engineer at SMU and co-founded two tech startups in Sri Lanka.
                       I graduated with First Class Honors from the University of Moratuwa, holding a B.Sc. in Computer Science & Engineering.
                     </BioParagraph>
                     <LinksText>
