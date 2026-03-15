@@ -14,6 +14,7 @@ import bus from "./assets/bus-schedule.png"
 import cvflow from "./assets/cvflow.png"
 import shipnavisim from "./assets/shipnavisim.png"
 import metroWatch from "./assets/metro-watch.gif"
+import bcrl from "./assets/bcrl.png"
 
 const MainContainer = styled.table`
   width: 100%;
@@ -240,6 +241,17 @@ const Surangika = () => <Person href="https://www.massey.ac.nz/massey/expertise/
 const JackDongarra = () => <Person href="https://en.wikipedia.org/wiki/Jack_Dongarra">Jack Dongarra</Person>
 
 const papersData = [
+  {
+    title: "Beyond Hard Constraints: Budget-Conditioned Reachability For Safe Offline Reinforcement Learning",
+    authors: <><Janaka />, <Akshat /></>,
+    venue: "ICAPS 2026",
+    arxiv: false,
+    openreview: false,
+    code: false,
+    paper: "/papers/icaps2026_bcrl.pdf",
+    image: bcrl,
+    description: "",
+  },
   {
     title: "IOSTOM: Offline Imitation Learning from Observations via State Transition Occupancy Matching",
     authors: <><Anh />, <Janaka />, <Tien />, <Akshat /></>,
