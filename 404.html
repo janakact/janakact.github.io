@@ -30,6 +30,23 @@
   <!-- </head> -->
   <body>
     <div id="root"></div>
+    <script>
+      // Store the requested path in sessionStorage before redirecting
+      // The React app can read this and navigate to the intended path via React Router
+      const requestedPath = window.location.pathname + window.location.search + window.location.hash;
+      if (requestedPath !== '/') {
+        sessionStorage.setItem('redirectPath', requestedPath);
+      }
+      
+      // Redirect to home page to load the React app
+      window.location.replace('/');
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Fallback for browsers with JavaScript disabled -->
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/">
+    </noscript>
   </body>
 </html>
