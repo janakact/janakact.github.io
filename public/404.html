@@ -1,35 +1,55 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDF5GWTFCX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-CDF5GWTFCX');
-    </script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDF5GWTFCX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    gtag('config', 'G-CDF5GWTFCX');
+  </script>
 
-    <title>Janaka Brahmanage</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <meta name="author" content="Janaka Brahmanage">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="assets/css/fontawesome.all.min.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
-    
-  </head>
-  <!-- <head> -->
-  <!--   <meta charset="UTF-8" /> -->
-  <!--   <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-  <!--   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  <!--   <title>my-website</title> -->
-  <!-- </head> -->
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <title>Janaka Brahmanage</title>
+
+  <meta name="author" content="Janaka Brahmanage">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="assets/css/fontawesome.all.min.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
+
+</head>
+<!-- <head> -->
+<!--   <meta charset="UTF-8" /> -->
+<!--   <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+<!--   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+<!--   <title>my-website</title> -->
+<!-- </head> -->
+
+<body>
+  <div id="root"></div>
+  <script>
+    // Store the requested path in sessionStorage before redirecting
+    // The React app can read this and navigate to the intended path via React Router
+    const requestedPath = window.location.pathname + window.location.search + window.location.hash;
+    if (requestedPath !== '/') {
+      sessionStorage.setItem('redirectPath', requestedPath);
+    }
+
+    // Redirect to home page to load the React app
+    window.location.replace('/');
+  </script>
+
+  <!-- <script type="module" src="/src/main.jsx"></script> -->
+
+  <!-- Fallback for browsers with JavaScript disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/">
+  </noscript>
+</body>
+
 </html>

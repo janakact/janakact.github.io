@@ -247,7 +247,7 @@ const papersData = [
     venue: "ICAPS 2026",
     arxiv: false,
     openreview: false,
-    projectPage: "https://janakact.github.io/bcrl",
+    projectPage: "/bcrl",
     code: false,
     paper: "/papers/icaps2026_bcrl.pdf",
     image: bcrl,
