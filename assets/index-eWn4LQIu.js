@@ -169,8 +169,6 @@ font-size: 14px;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `,Pm=pt.h2`
   font-size: 24px;
   margin-bottom: 15px;
