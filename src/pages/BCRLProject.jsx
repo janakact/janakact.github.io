@@ -59,9 +59,8 @@ const ProjectImage = styled.img`
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
+// box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 const SectionTitle = styled.h2`
   font-size: 24px;
@@ -101,7 +100,7 @@ export default function BCRLProject() {
       </Authors>
 
       <LinksContainer>
-        <ProjectLink href="/papers/icaps2026_bcrl.pdf" target="_blank" rel="noopener noreferrer">
+        <ProjectLink href="https://arxiv.org/pdf/2603.22292" target="_blank" rel="noopener noreferrer">
           📄 Paper (Extended Version)
         </ProjectLink>
         <ProjectLink href="https://github.com/janakact/bcrl" target="_blank" rel="noopener noreferrer">
