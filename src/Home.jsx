@@ -248,7 +248,7 @@ const papersData = [
     arxiv: "https://arxiv.org/abs/2603.22292",
     openreview: false,
     projectPage: "/bcrl",
-    code: false,
+    code: "https://github.com/janakact/bcrl",
     paper: "https://arxiv.org/pdf/2603.22292",
     image: bcrl,
     description: "",
