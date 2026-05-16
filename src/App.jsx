@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import Home from './Home'
 import BCRLProject from './pages/BCRLProject'
+import GDCBFProject from './pages/GDCBFProject'
 
 function AppRoutes() {
   const navigate = useNavigate()
@@ -19,6 +20,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/bcrl" element={<BCRLProject />} />
+      <Route path="/gdcbf" element={<GDCBFProject />} />
     </Routes>
   )
 }
