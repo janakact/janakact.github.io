@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const ProjectContainer = styled.div`
   width: 100%;
@@ -9,7 +8,7 @@ const ProjectContainer = styled.div`
   padding: 20px;
 `;
 
-const BackLink = styled(Link)`
+const BackLink = styled.a`
   display: inline-block;
   margin-bottom: 20px;
   color: #0066cc;
@@ -83,7 +82,7 @@ const ProjectContent = styled.div`
 export default function GDCBFProject() {
   return (
     <ProjectContainer>
-      <BackLink to="/">← Back</BackLink>
+      <BackLink href="/">← Back</BackLink>
       <ProjectTitle>GDCBF: Project Title Placeholder</ProjectTitle>
 
       <Authors>

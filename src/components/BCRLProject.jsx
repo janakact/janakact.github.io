@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import bcrlImage from '../assets/bcrl.png';
+import bcrlImage from '../assets/bcrl.png?url';
 
 const ProjectContainer = styled.div`
   width: 100%;
@@ -10,12 +9,12 @@ const ProjectContainer = styled.div`
   padding: 20px;
 `;
 
-const BackLink = styled(Link)`
+const BackLink = styled.a`
   display: inline-block;
   margin-bottom: 20px;
   color: #0066cc;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -92,7 +91,7 @@ const ProjectContent = styled.div`
 export default function BCRLProject() {
   return (
     <ProjectContainer>
-      <BackLink to="/">← Back</BackLink>
+      <BackLink href="/">← Back</BackLink>
       <ProjectTitle>Beyond Hard Constraints: Budget-Conditioned Reachability For Safe Offline Reinforcement Learning</ProjectTitle>
 
       <Authors>

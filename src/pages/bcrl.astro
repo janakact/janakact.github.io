@@ -1,0 +1,11 @@
+---
+import React from 'react';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BCRLProject from '../components/BCRLProject.jsx';
+import { renderWithStyles } from '../lib/renderReactWithSC.js';
+
+const { html, styles } = renderWithStyles(React.createElement(BCRLProject));
+---
+<BaseLayout title="BCRL — Janaka Brahmanage" styles={styles}>
+  <Fragment set:html={html} />
+</BaseLayout>

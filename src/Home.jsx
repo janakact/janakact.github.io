@@ -7,14 +7,14 @@ import { useState } from 'react'
 //
 import React from "react"
 import styled from 'styled-components'
-import profileImage from './assets/me.jpg'
-import flowpgImage from "./assets/flowpg.png"
-import iostom from "./assets/iostom.gif"
-import bus from "./assets/bus-schedule.png"
-import cvflow from "./assets/cvflow.png"
-import shipnavisim from "./assets/shipnavisim.png"
-import metroWatch from "./assets/metro-watch.gif"
-import bcrl from "./assets/bcrl.png"
+import profileImage from './assets/me.jpg?url'
+import flowpgImage from "./assets/flowpg.png?url"
+import iostom from "./assets/iostom.gif?url"
+import bus from "./assets/bus-schedule.png?url"
+import cvflow from "./assets/cvflow.png?url"
+import shipnavisim from "./assets/shipnavisim.png?url"
+import metroWatch from "./assets/metro-watch.gif?url"
+import bcrl from "./assets/bcrl.png?url"
 
 const MainContainer = styled.table`
   width: 100%;

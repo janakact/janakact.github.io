@@ -1,0 +1,11 @@
+---
+import React from 'react';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GDCBFProject from '../components/GDCBFProject.jsx';
+import { renderWithStyles } from '../lib/renderReactWithSC.js';
+
+const { html, styles } = renderWithStyles(React.createElement(GDCBFProject));
+---
+<BaseLayout title="GDCBF — Janaka Brahmanage" styles={styles}>
+  <Fragment set:html={html} />
+</BaseLayout>

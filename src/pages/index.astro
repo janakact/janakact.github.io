@@ -1,0 +1,11 @@
+---
+import React from 'react';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Home from '../Home.jsx';
+import { renderWithStyles } from '../lib/renderReactWithSC.js';
+
+const { html, styles } = renderWithStyles(React.createElement(Home));
+---
+<BaseLayout title="Janaka Brahmanage" styles={styles}>
+  <Fragment set:html={html} />
+</BaseLayout>
