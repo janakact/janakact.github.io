@@ -1,3 +1,5 @@
+- Choudhury, A.\*, Brahmanage, J. C.\*, Kumar, A., & Paruchuri, P. (2026). Persistent Safety Set Guided Offline Safe Reinforcement Learning. _International Joint Conference on Artificial Intelligence (IJCAI)_. **[Accepted]** (\*Equal contribution) [Link](https://janakact.github.io/gdcbf)
+
 - Brahmanage, J. C., Ling, J., & Kumar, A. (2025) Leveraging Constraint Violation Signals For Action Constrained Reinforcement Learning. The Thirty-ninth Annual AAAI Conference on Artificial Intelligence(AAAI). **[Accepted]**
 
 - Pham, A.Q., Brahmanage, J. C., Kumar, (2025) A. ShipNaviSim: Data-Driven Simulation for RealWorld Maritime Navigation. The Twenty-Forth International Conference on Autonomous Agents and Multiagent Systems (AAMAS). **[Accepted]**

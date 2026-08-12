@@ -15,6 +15,7 @@ import cvflow from "./assets/cvflow.png?url"
 import shipnavisim from "./assets/shipnavisim.png?url"
 import metroWatch from "./assets/metro-watch.gif?url"
 import bcrl from "./assets/bcrl.png?url"
+import gdcbf from "./assets/gdcbf.png?url"
 
 const MainContainer = styled.table`
   width: 100%;
@@ -207,6 +208,12 @@ function Paper({ data }) {
         <br />
         <small>{data.authors}</small>
         <br />
+        {data.note && (
+          <>
+            <Note>{data.note}</Note>
+            <br />
+          </>
+        )}
         {links.length > 0 && (
           <>
             {'  '}
@@ -239,8 +246,29 @@ const Baihua = () => <Person href="https://faculty.smu.edu.sg/profile/baihua-zhe
 const Tien = () => <Person href="https://faculty.smu.edu.sg/profile/mai-anh-tien-461">Tien Anh Mai</Person>
 const Surangika = () => <Person href="https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=319722">Surangika Ranathunga</Person>
 const JackDongarra = () => <Person href="https://en.wikipedia.org/wiki/Jack_Dongarra">Jack Dongarra</Person>
+const Ayan = () => <Person href="https://github.com/AyanRoy24">Ayan Choudhury</Person>
+const Praveen = () => <Person href="https://scholar.google.com/citations?user=ILUqgKEAAAAJ&hl=en">Praveen Paruchuri</Person>
+
+const EqualContrib = () => <sup>*</sup>
+
+const Note = styled.small`
+  color: #666;
+`
 
 const papersData = [
+  {
+    title: "Persistent Safety Set Guided Offline Safe Reinforcement Learning",
+    authors: <><Ayan /><EqualContrib />, <Janaka /><EqualContrib />, <Akshat />, <Praveen /></>,
+    note: "* Equal contribution",
+    venue: "IJCAI 2026",
+    projectPage: "/gdcbf",
+    arxiv: false,
+    openreview: false,
+    code: "https://ayanroy24.github.io/GDCBF/",
+    paper: "/papers/ijcai2026_gdcbf.pdf",
+    image: gdcbf,
+    description: "",
+  },
   {
     title: "Beyond Hard Constraints: Budget-Conditioned Reachability For Safe Offline Reinforcement Learning",
     authors: <><Janaka />, <Akshat /></>,
@@ -409,7 +437,11 @@ const ExperienceData = [
 
 const AwardsData = [
   {
-    title: "SMU Presidential Doctoral Fellowship (2024 and 2025)",
+    title: "SMU School of Computing and Information Systems (SCIS) Dean's List (AY2026-27)",
+    description: "Awarded in recognition of significant research achievements in AY2025-26."
+  },
+  {
+    title: "SMU Presidential Doctoral Fellowship (2024, 2025 and 2026)",
     description: "The SMU Presidential Doctoral Fellowship is provided to exceptionally qualified students who are offered candidatures into SMU's PhD programmes. The Fellowship also recognises existing PhD students who are outstanding in their studies."
   },
   {
@@ -512,7 +544,8 @@ function Home() {
                     <BioParagraph>
                       I am a fourth-year PhD student in Computer Science at the <a href="https://scis.smu.edu.sg">School of Computing and Information Systems, Singapore Management University (SMU)</a>,
                       advised by Prof. <Akshat />. My research primarily focuses on Reinforcement Learning (RL), with a specific interest in Safe-RL, Imitation Learning,
-                      and Constraint Satisfaction. I am a recipient of the <a href="https://graduatestudies.smu.edu.sg/phd/presidential-doctoral-fellowship">SMU Presidential Doctoral Fellowship (2024 and 2025)</a>.
+                      and Constraint Satisfaction. I am a recipient of the <a href="https://graduatestudies.smu.edu.sg/phd/presidential-doctoral-fellowship">SMU Presidential Doctoral Fellowship (2024, 2025 and 2026)</a> and
+                      the SCIS Dean's List (AY2026-27).
                     </BioParagraph>
                     <BioParagraph>
                       Prior to my PhD, I worked as a Research Engineer at SMU and co-founded two tech startups in Sri Lanka.

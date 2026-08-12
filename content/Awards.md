@@ -1,7 +1,10 @@
 ---
 title: Awards and Honors
 ---
-- **SMU Presidential Doctoral Fellowship 2024**
+- **SMU School of Computing and Information Systems (SCIS) Dean's List (AY2026-27)**
+  - Awarded in recognition of significant research achievements in AY2025-26
+
+- **SMU Presidential Doctoral Fellowship (2024, 2025 and 2026)**
   - The SMU Presidential Doctoral Fellowship is provided to exceptionally qualified students who are offered candidatures into SMU's PhD programmes. The Fellowship also recognises existing PhD students who are outstanding in their studies.
 
 
