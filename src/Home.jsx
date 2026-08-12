@@ -15,7 +15,7 @@ import cvflow from "./assets/cvflow.png?url"
 import shipnavisim from "./assets/shipnavisim.png?url"
 import metroWatch from "./assets/metro-watch.gif?url"
 import bcrl from "./assets/bcrl.png?url"
-import gdcbf from "./assets/gdcbf.png?url"
+import gdcbf from "./assets/gdcbf-concept.png?url"
 
 const MainContainer = styled.table`
   width: 100%;
